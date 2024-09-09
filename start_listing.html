@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell/Rent Property</title>
+    <link rel="stylesheet" href="start.css">
+</head>
+<body>
+  <div class="header">
+    <a href="add_listing_main.html" class="back-arrow">
+        &#8592;
+    </a>
+    <div class="title">
+        Sell/Rent Property
+    </div>
+  </div>
+  <div class="container">
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+          <div class="progress" id="progress-bar" style="width: 0%;"></div>
+      </div>
+      <div class="progress-text">
+          <span id="progress-text">0%</span>
+      </div>
+    </div>
+
+    <div class="name-container">
+      <div class="name-field">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" placeholder="First Name" required>
+      </div>
+      <div class="name-field">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" placeholder="Last Name" required>
+      </div>
+  </div>
+  
+    
+    <div class="form-container">
+      <p>I want to</p>
+      <div class="buttons">
+          <button id="sellBtn" class="action-btn sell">Sell</button>
+          <button id="rentBtn" class="action-btn rent">Rent</button>
+      </div>
+    </div>
+    <div class="property-type-container">
+      <p>Your property type</p>
+      <div class="property-types">
+          <div id="apartment" class="property-type selected">
+              <img src="/assets/images/apartment.png" alt="apartment">
+              <p>apartment</p>
+          </div>
+          <div id="villa" class="property-type">
+              <img src="/assets/images/villa.png" alt="villa">
+              <p>villa</p>
+          </div>
+          <div id="independent-house" class="property-type">
+              <img src="/assets/images/landed.png" alt="independent house">
+              <p>independent house</p>
+          </div>
+          <div id="penthouse" class="property-type">
+              <img src="/assets/images/pent.png" alt="penthouse">
+              <p>penthouse</p>
+          </div>
+          <div id="studio" class="property-type">
+              <img src="/assets/images/studio.png" alt="studio">
+              <p>studio</p>
+          </div>
+          <div id="plot" class="property-type">
+              <img src="/assets/images/plot.png" alt="plot">
+              <p>plot</p>
+          </div>
+      </div>
+    </div>
+    <div class="location-container">
+      <p>Where is the property located ?</p>
+      <div class="location-input">
+          <input type="text" placeholder="Locality/Project" required>
+          <span class="location-icon">&#x1F4CD;</span>
+      </div>
+    </div>
+    <div class="bedrooms-container">
+      <p>Select Bedrooms *</p>
+      <div class="bedroom-buttons">
+          <div class="bedroom">1</div>
+          <div class="bedroom">2</div>
+          <div class="bedroom">3</div>
+          <div class="bedroom">4</div>
+          <div class="bedroom">5</div>
+          <div class="bedroom">6</div>
+          <div class="bedroom">7</div>
+          <div class="bedroom">8</div>
+          <div class="bedroom">9</div>
+          <div class="bedroom">10</div>
+          <div class="bedroom hidden">11</div>
+          <div class="bedroom hidden">12</div>
+          <div class="bedroom hidden">13</div>
+          <div class="bedroom hidden">14</div>
+          <div class="bedroom hidden">15</div>
+      </div>
+      <a href="#" id="show-all-btn" class="toggle-show">+ show all</a>
+    </div>
+  </div>
+  <div class="area-container">
+    <p>Tell us your property area &#9432;</p>
+    <div class="area-inputs">
+      <div class="area-field">
+          <label for="saleable-area">Saleable area <span class="required">*</span></label>
+          <input type="text" id="saleable-area" placeholder="Saleable area" required>
+          <select id="saleable-unit">
+              <option value="sq.feet">sq.feet</option>
+              <option value="sq.meters">sq.meters</option>
+              <option value="sq.yards">sq.yards</option>
+          </select>
+      </div>
+      <div class="area-field">
+          <label for="carpet-area">Carpet area</label>
+          <input type="text" id="carpet-area" placeholder="Carpet area">
+          <select id="carpet-unit">
+              <option value="sq.feet">sq.feet</option>
+              <option value="sq.meters">sq.meters</option>
+              <option value="sq.yards">sq.yards</option>
+          </select>
+      </div>
+    </div>
+  </div>
+  <div class="configuration-container">
+    <p>Tell us more about the configuration</p>
+    <div class="config-inputs">
+      <div class="config-field">
+          <label for="bathrooms">Bathrooms <span class="required">*</span></label>
+          <select id="bathrooms">
+              <option value="">--Select--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+          </select>
+      </div>
+      <div class="config-field">
+          <label for="balconies">Balconies</label>
+          <select id="balconies">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+          </select>
+      </div>
+    </div>
+  </div>
+  <div class="price-container">
+    <p>What is the expected price</p>
+    <div class="price-field">
+        <label for="price">Price <span class="required">*</span> <span class="currency-unit">(RM | RM/sq.feet)</span></label>
+        <input type="text" id="price" placeholder="Price" required>
+    </div>
+    <div class="price-field">
+        <label for="booking-amount">Booking Amount <span class="required">*</span> <span class="currency-unit">(RM)</span></label>
+        <input type="text" id="booking-amount" placeholder="Booking Amount" required>
+    </div>
+  </div>
+
+  <div class="description-container">
+    <p>Description</p>
+    <div class="description-field">
+      <textarea id="description" placeholder="Enter a description of the property" rows="8"></textarea>
+    </div>
+  </div>
+
+  <div class="property-details-container">
+    <p class="collapsible-header">Property Details <span class="toggle-arrow">&#9662;</span></p>
+    <div class="collapsible-content">
+      <div class="property-field">
+          <label for="floor-no">Floor No.</label>
+          <select id="floor-no">
+              <option value="">--Select--</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+          </select>
+      </div>
+      <div class="property-field">
+          <label for="total-floor">Total Floor</label>
+          <select id="total-floor">
+              <option value="">--Select--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+          </select>
+      </div>
+      <div class="property-field">
+          <label for="open-side">Open Side</label>
+          <select id="open-side">
+              <option value="">--Select--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+          </select>
+      </div>
+      <div class="property-field">
+          <label for="facing">Facing</label>
+          <select id="facing">
+              <option value="">--Select--</option>
+              <option value="north">North</option>
+              <option value="south">South</option>
+              <option value="west">West</option>
+              <option value="East">East</option>
+              <option value="North East">North East</option>
+              <option value="North West">North West</option>
+              <option value="South East">South East</option>
+              <option value="South West">South West</option>
+          </select>
+      </div>
+      <div class="property-field">
+          <label for="facing-road-width">Facing Road Width</label>
+          <input type="text" id="facing-road-width" placeholder="Facing Road Width">
+          <select id="facing-road-width-unit">
+              <option value="feet">feet</option>
+              <option value="meters">meters</option>
+          </select>
+      </div>
+    </div>
+  </div>
+  <div class="image-section-container">
+    <p>Image Section &#9432;</p>
+    <div class="image-upload">
+      <div class="add-images">
+          <span class="plus-sign">+</span>
+          <span class="add-text">add more</span>
+      </div>
+      <input type="file" id="image-input" accept="image/*" multiple style="display:none;">
+    </div>
+    <div class="uploaded-images" id="uploaded-images"></div>
+    <div class="publish-section">
+      <button class="publish-button">Publish</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const showAllBtn = document.getElementById("show-all-btn");
+      const hiddenBedrooms = document.querySelectorAll(".bedroom.hidden");
+      const progressBar = document.getElementById("progress-bar");
+      const progressText = document.getElementById("progress-text");
+      let progressValue = 0;
+
+      function updateProgress(increment) {
+        progressValue += increment;
+        progressValue = Math.min(progressValue, 100);
+        progressBar.style.width = progressValue + '%';
+        progressText.textContent = progressValue + '%';
+      }
+
+      if (showAllBtn) {
+        showAllBtn.addEventListener("click", function(e) {
+          e.preventDefault();
+          if (showAllBtn.textContent === "+ show all") {
+            hiddenBedrooms.forEach(function(bedroom) {
+              bedroom.classList.remove("hidden");
+            });
+            showAllBtn.textContent = "- show less";
+            updateProgress(5);
+          } else {
+            hiddenBedrooms.forEach(function(bedroom) {
+              bedroom.classList.add("hidden");
+            });
+            showAllBtn.textContent = "+ show all";
+            updateProgress(-5);
+          }
+        });
+      }
+
+      const collapsibleHeader = document.querySelector(".collapsible-header");
+      const collapsibleContent = document.querySelector(".collapsible-content");
+
+      if (collapsibleHeader && collapsibleContent) {
+        collapsibleHeader.addEventListener("click", function() {
+          collapsibleContent.classList.toggle("active");
+          collapsibleContent.style.display = collapsibleContent.style.display === "none" || collapsibleContent.style.display === "" ? "block" : "none";
+          collapsibleHeader.classList.toggle("active");
+        });
+      }
+
+      const imageUploadDiv = document.querySelector(".image-upload");
+      const imageInput = document.getElementById("image-input");
+      const uploadedImagesDiv = document.getElementById("uploaded-images");
+
+      if (imageUploadDiv && imageInput && uploadedImagesDiv) {
+        imageUploadDiv.addEventListener("click", function() {
+          imageInput.click();
+        });
+
+        imageInput.addEventListener("change", function() {
+          const files = Array.from(imageInput.files);
+          files.forEach(file => {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              const wrapper = document.createElement("div");
+              wrapper.classList.add("image-wrapper");
+
+              const img = document.createElement("img");
+              img.src = e.target.result;
+              wrapper.appendChild(img);
+
+              const deleteIcon = document.createElement("button");
+              deleteIcon.classList.add("delete-icon");
+              deleteIcon.innerHTML = "&times;";
+              wrapper.appendChild(deleteIcon);
+
+              deleteIcon.addEventListener("click", function() {
+                uploadedImagesDiv.removeChild(wrapper);
+                updateProgress(-10);
+              });
+
+              uploadedImagesDiv.appendChild(wrapper);
+              updateProgress(10);
+            }
+            reader.readAsDataURL(file);
+          });
+        });
+      }
+
+      const sellBtn = document.getElementById('sellBtn');
+      const rentBtn = document.getElementById('rentBtn');
+
+      if (sellBtn && rentBtn) {
+        sellBtn.addEventListener('click', () => {
+          sellBtn.classList.add('active');
+          rentBtn.classList.remove('active');
+          updateProgress(5);
+        });
+
+        rentBtn.addEventListener('click', () => {
+          rentBtn.classList.add('active');
+          sellBtn.classList.remove('active');
+          updateProgress(5);
+        });
+      }
+
+      const propertyTypes = document.querySelectorAll('.property-type');
+
+      propertyTypes.forEach(type => {
+        type.addEventListener('click', () => {
+          propertyTypes.forEach(t => t.classList.remove('selected'));
+          type.classList.add('selected');
+          updateProgress(5);
+        });
+      });
+
+      const bedroomButtons = document.querySelectorAll('.bedroom');
+
+      bedroomButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          bedroomButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          updateProgress(5);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.content {
+  flex: 1;
+}
+.content h1, .content h3 {
+  font-size: 2em;
+  color: #333;
+}
+.content p {
+  color: #666;
+  line-height: 1.6;
+}
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+.content ul li {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+.content ul li::before {
+  content: '✔';
+  color: #00c853;
+  margin-right: 10px;
+}
+.content a {
+  color: #f00;
+  text-decoration: none;
+}
+.content .button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 1em;
+}
+.content .button:hover{
+  background-color: #F35525;
+}
+.text-button {
+  color: #00f;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.image {
+  flex: 1;
+  text-align: center;
+}
+.image img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+.header img {
+  max-height: 50px;
+}
+.header nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1em;
+}
+.hidden {
+  display: none;
+}
+
+/* Tab Styles */
+.how-it-works {
+  text-align: center;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.how-it-works.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tab-container {
+  display: flex;
+  flex-direction: column;
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.tab {
+  flex: 1;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  text-align: center;
+}
+.tab.active {
+  border-bottom: 3px solid #f00;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.tab-content .content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.tab-image {
+  flex: 1;
+  text-align: center;
+}
+.tab-image img {
+  max-width: 100%;
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image covers the entire circle */
+    width: 300px; /* Adjust the size as needed */
+    height: 300px; /* Adjust the size as needed */
+}
+.tab-text {
+  flex: 2;
+  text-align: left;
+  max-width: 60%;
+}
+
+/* Transition effect for the find-joy section */
+.find-joy {
+  max-width: 1000px;
+  margin: 90px auto 50px; /* Add spacing above this section */
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.find-joy.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.find-joy .content {
+  flex: 1;
+  text-align: left;
+}
+
+.find-joy .highlight {
+  color: #F35525;
+}
+
+.find-joy .video {
+  flex: 2;
+  text-align: center;
+}
+
+.find-joy video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with VILLA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Login with VILLA</h2>
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="input-group">
+                <label for="email-username">Email or username</label>
+                <div class="input-wrapper">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <input asp-for="Input.Email" class="form-control" id="email-username" placeholder="Email or username" required>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <span class="icon"><i class="fas fa-lock"></i></span>
+                    <input asp-for="Input.Password" type="password" id="password" class="form-control" placeholder="Password" required>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="remember-me">
+                <input asp-for="Input.RememberMe" type="checkbox" id="remember-me">
+            <label for="remember-me">@Html.DisplayNameFor(m => m.Input.RememberMe)</label>
+            </div>
+            <button type="submit">Login</button>
+            <div class="signup-link">
+                <span>Don't have an account? <a asp-page="./register" asp-route-returnUrl="@Model.ReturnUrl">Sign up</a></span>
+            </div>
+            <div class="divider"></div>
+            <div class="social-login">
+                <span>Or sign in with</span>
+                <div class="social-media">
+                    @foreach (var provider in Model.ExternalLogins)
+                    {
+                        string iconClass = provider.Name.ToLower() switch
+                        {
+                            "facebook" => "fa-facebook-f",
+                            "twitter" => "fa-twitter",
+                            "google" => "fa-google",
+                            // Add other providers and their respective Font Awesome icon classes here
+                            _ => "fa-globe" // default icon
+                        };
+                        <a href="@Url.Page("./ExternalLogin", new { provider = provider.Name, returnUrl = Model.ReturnUrl })" class="social-icon">
+                            <i class="fab @iconClass"></i>
+                        </a>
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

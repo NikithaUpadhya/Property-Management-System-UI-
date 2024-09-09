@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register with VILLA</title>
+    <link rel="stylesheet" href="styleslogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="register-container">
+        <form class="register-form">
+            <h2>Register with VILLA</h2>
+            <div class="flex-container">
+              <div class="input-group">
+                  <label for="first-name">First name</label>
+                  <div class="input-wrapper">
+                      <span class="icon"><i class="fas fa-user"></i></span>
+                      <input type="text" id="first-name" name="first-name" placeholder="First name" required>
+                  </div>
+              </div>
+              <div class="input-group">
+                  <label for="last-name">Last name</label>
+                  <div class="input-wrapper">
+                      <span class="icon"><i class="fas fa-user"></i></span>
+                      <input type="text" id="last-name" name="last-name" placeholder="Last name" required>
+                  </div>
+              </div>
+          </div>
+          
+            <div class="input-group">
+                <label for="email-address">Email Address</label>
+                <div class="input-wrapper">
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <input type="email" id="email-address" name="email-address" placeholder="Email Address" required>
+                </div>
+            </div>
+            <div class="input-group">
+              <label for="role">Role</label>
+              <div class="input-wrapper">
+                  <span class="icon"><i class="fas fa-user-tag"></i></span>
+                  <select id="role" name="role" required>
+                      <option value="">Select your role</option>
+                      <option value="buyer">Buyer</option>
+                      <option value="seller">Seller</option>
+                  </select>
+              </div>
+          </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <span class="icon"><i class="fas fa-lock"></i></span>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <div class="input-wrapper">
+                    <span class="icon"><i class="fas fa-lock"></i></span>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                </div>
+            </div>
+            <div class="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree with the terms & conditions</label>
+            </div>
+            <button type="submit">Create Account</button>
+            <div class="login-link">
+              <span>Already have an account? <a href="#">Login</a></span>
+          </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.contact-header {
+  position: relative;
+  height: 400px;
+  background-image: url('schedule_header.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.contact-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black translucent overlay */
+  z-index: 1;
+}
+
+.contact-header h1, .contact-header p {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 18px;
+}
+
+.schedule-visits {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.schedule-visits h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.visit-card {
+  width: 90%;
+  max-width: 700px; /* Increased width */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px; /* Increased padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.visit-info h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.visit-info p {
+  margin: 8px 0; /* Increased margin */
+  font-size: 16px;
+  color: #333;
+}
+
+.visit-actions {
+  margin-top: 15px; /* Increased margin-top */
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-btn, .cancel-btn {
+  padding: 12px 24px; /* Increased padding */
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #000000;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #000000;
+  color: white;
+}
+
+/* Overlay styles */
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black translucent overlay */
+  z-index: 8;
+}
+
+/* Popup form styles */
+.form-popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 650px; /* Increased width */
+  padding: 20px;
+  background-color: white;
+}
+
+.form-container h2 {
+  text-align: center;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="date"],
+.form-container input[type="time"],
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="date"]:focus,
+.form-container input[type="time"]:focus,
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #000000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.form-container .btn:hover{
+  background-color: #F35525 ;
+}
+
+.form-container .cancel {
+  background-color: rgb(0, 0, 0);
+}
+
+.form-container .cancel:hover{
+  background-color: #F35525 ;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+.edit-btn:hover, .cancel-btn:hover{
+  background-color: #F35525;
+
+}

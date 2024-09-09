@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Travelista</title>
+    <link rel="stylesheet" href="schedule.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header></header>
+    <section class="contact-header">
+        <h1>Schedule Visits</h1>
+        <p>Home > Schedule Visits</p>
+    </section>
+    <section class="form-section">
+        <div class="form-container">
+            <h2>Schedule Visits</h2>
+            <p>Enter your details and schedule a visit now!</p>
+            <form id="scheduleForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-full">
+                        <label for="email-id">Email ID</label>
+                        <input type="email" id="email-id" name="email-id" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group-full">
+                      <label for="property-name">Property Name</label>
+                      <input type="text" id="property-name" name="property-name" required>
+                  </div>
+              </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="text" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group-full">
+                        <label for="notes">Extra Notes/Description</label>
+                        <textarea id="notes" name="notes" rows="4" required></textarea>
+                    </div>
+                </div>
+                <button type="submit">Check Availability</button>
+            </form>
+        </div>
+    </section>
+    <section class="map-section">
+        <div id="map"></div>
+    </section>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Popup Message -->
+    <div class="popup-message" id="popupMessage">
+        <p>Congratulations! Your visit has been scheduled</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        $(function() {
+            $("#date").datepicker();
+        });
+
+        var map = L.map('map').setView([3.1390, 101.6869], 10);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([3.1390, 101.6869]).addTo(map)
+            .bindPopup('Kuala Lumpur')
+            .openPopup();
+
+        // Handle form submission
+        document.getElementById('scheduleForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+            openPopup(); // Show the popup message
+        });
+
+        function openPopup() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popupMessage').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popupMessage').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
